@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				ocean: {
+					primary: 'hsl(var(--ocean-primary))',
+					secondary: 'hsl(var(--ocean-secondary))',
+					light: 'hsl(var(--ocean-light))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +73,14 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-ocean': 'var(--gradient-ocean)',
+				'gradient-ocean-light': 'var(--gradient-ocean-light)'
+			},
+			boxShadow: {
+				'ocean': 'var(--shadow-ocean)',
+				'card-ocean': 'var(--shadow-card)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +98,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-ocean': {
+					'0%, 100%': { boxShadow: '0 0 0 0 hsl(var(--ocean-primary) / 0.4)' },
+					'50%': { boxShadow: '0 0 0 15px hsl(var(--ocean-primary) / 0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-ocean': 'pulse-ocean 2s infinite'
 			}
 		}
 	},
